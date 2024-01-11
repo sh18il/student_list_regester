@@ -1,110 +1,13 @@
-// import 'package:flutter/material.dart';
 
-// import 'package:project_name/functions/function.dart';
-// import 'package:project_name/model/data_model.dart';
-// import 'package:project_name/screens/widgets/list_student_widget.dart';
 
-// class EditScreen extends StatefulWidget {
-//   const EditScreen(
-//       {super.key,
-//       required this.name,
-//       required this.age,
-//       required this.addres,
-//       required int index});
-//   final String name;
-//   final String age;
-//   final String addres;
 
-//   @override
-//   State<EditScreen> createState() => _EditScreenState();
-// }
-
-// class _EditScreenState extends State<EditScreen> {
-//   final TextEditingController _nameContr = TextEditingController();
-//   final TextEditingController _ageContr = TextEditingController();
-//   final TextEditingController _addresContr = TextEditingController();
-
-//   @override
-//   void initState() {
-//     _nameContr.text = widget.name;
-//     _ageContr.text = widget.age;
-//     _addresContr.text = widget.addres;
-//     super.initState();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Update data'),
-//       ),
-//       body: SingleChildScrollView(
-//         child: Column(
-//           children: [
-//             TextField(
-//               controller: _nameContr,
-//               decoration: InputDecoration(
-//                 labelText: 'name',
-//                 hintText: widget.name,
-//               ),
-//             ),
-//             TextField(
-//               controller: _ageContr,
-//               decoration: InputDecoration(
-//                 labelText: 'age',
-//                 hintText: widget.age,
-//               ),
-//             ),
-//             TextField(
-//               controller: _addresContr,
-//               decoration: InputDecoration(
-//                 labelText: 'addres',
-//                 hintText: widget.addres,
-//               ),
-//             ),
-//             ElevatedButton(
-//                 onPressed: () {
-//                   updateAll();
-//                   final value = StudentModel(
-//                     name: _nameContr.text,
-//                     age: _ageContr.text,
-//                     addres: _addresContr.text,
-//                   );
-//                 },
-//                 child: Text('update')),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-
-//   Future<void> updateAll() async {
-//     final name1 = _nameContr.text;
-//     final age1 = _ageContr.text;
-//     final addres1 = _addresContr.text;
-
-//     if (name1.isEmpty || age1.isEmpty || addres1.isEmpty) {
-//       return;
-//     } else {
-//       final update = StudentModel(name: name1, age: age1, addres: addres1);
-
-//       editstudent(widget.name, update);
-//       editstudent(widget.age, update);
-//       editstudent(widget.addres, update);
-//       Navigator.of(context)
-//           .push(MaterialPageRoute(builder: (context) => ListStudentW()));
-//     }
-//   }
-// }
-
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project_name/functions/function.dart';
 import 'package:project_name/model/data_model.dart';
-import 'package:project_name/screens/widgets/list_student_widget.dart';
+
 
 class EditStud extends StatefulWidget {
   String name;
@@ -142,9 +45,10 @@ class _EditStudState extends State<EditStud> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: const Color.fromARGB(221, 158, 195, 255),
       appBar: AppBar(
-        title: Text('EDIT STUDENT LIST'),
-        shape: RoundedRectangleBorder(
+        title: const Text('EDIT STUDENT LIST'),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(45))),
       ),
       body: SingleChildScrollView(
@@ -160,7 +64,7 @@ class _EditStudState extends State<EditStud> {
                     : const AssetImage("assets/studentdp.jpg.png")
                         as ImageProvider,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ElevatedButton.icon(
@@ -179,7 +83,7 @@ class _EditStudState extends State<EditStud> {
                   },
                   icon: const Icon(Icons.camera_alt),
                   label: const Text("CAMERA")),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextField(
@@ -192,7 +96,7 @@ class _EditStudState extends State<EditStud> {
                   hintText: "Name",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextField(
@@ -205,7 +109,7 @@ class _EditStudState extends State<EditStud> {
                   hintText: "age",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextField(
@@ -218,7 +122,7 @@ class _EditStudState extends State<EditStud> {
                   hintText: "Addres",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
@@ -226,7 +130,7 @@ class _EditStudState extends State<EditStud> {
                     updateAll();
                     Navigator.pop(context);
                   },
-                  child: Text('submit')),
+                  child: const Text('submit')),
             ],
           ),
         ),
@@ -244,7 +148,10 @@ class _EditStudState extends State<EditStud> {
       return;
     } else {
       final update =
-          StudentModel(name: name1, age: age1, addres: addres1, image: Image1);
+          StudentModel(name: name1,
+           age: age1,
+            addres: addres1,
+             image: Image1);
       editstudent(widget.index, update);
     }
   }

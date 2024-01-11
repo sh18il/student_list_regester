@@ -18,10 +18,11 @@ class ViewProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(221, 158, 195, 255),
       appBar: AppBar(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(45))),
-        title: Text('PROFILE'),
+        title: const Text('PROFILE'),
       ),
       body: Container(
         child: Column(
@@ -31,22 +32,22 @@ class ViewProfile extends StatelessWidget {
               radius: 80,
               backgroundImage: FileImage(File(imagePath)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Card(
               color: Colors.white70,
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(45))),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Title(
                       color: Colors.black,
-                      child: Text(
+                      child: const Text(
                         'Name :',
                         style: TextStyle(color: Colors.blue),
                       )),
@@ -59,19 +60,19 @@ class ViewProfile extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Card(
               color: Colors.white70,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Title(
                       color: Colors.black,
-                      child: Text(
+                      child: const Text(
                         'Age :',
                         style: TextStyle(color: Colors.blue),
                       )),
@@ -84,22 +85,22 @@ class ViewProfile extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Card(
               color: Colors.white70,
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.vertical(bottom: Radius.circular(45))),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Title(
                       color: Colors.black,
-                      child: Text(
+                      child: const Text(
                         'Addres :',
                         style: TextStyle(color: Colors.blue),
                       )),

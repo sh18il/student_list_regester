@@ -23,17 +23,21 @@ class _AddStudentWState extends State<AddStudentW> {
 
   File? _selectImage;
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(221, 158, 195, 255),
       appBar: AppBar(
-        title: Text('ADD STUDENT '),
-        shape: RoundedRectangleBorder(
+        title: const Text('ADD STUDENT '),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(45))),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+          
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
@@ -41,7 +45,7 @@ class _AddStudentWState extends State<AddStudentW> {
                 backgroundColor: const Color.fromARGB(255, 25, 25, 81),
                 backgroundImage: _selectImage != null
                     ? FileImage(_selectImage!)
-                    : AssetImage("assets/studentdp.jpg.png") as ImageProvider,
+                    : const AssetImage("assets/studentdp.jpg.png") as ImageProvider,
               ),
             ),
             ElevatedButton.icon(
@@ -80,7 +84,7 @@ class _AddStudentWState extends State<AddStudentW> {
                         hintText: 'Name',
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
@@ -97,7 +101,7 @@ class _AddStudentWState extends State<AddStudentW> {
                         hintText: 'Age',
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
@@ -114,7 +118,7 @@ class _AddStudentWState extends State<AddStudentW> {
                         hintText: 'Addres',
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     ElevatedButton(
@@ -124,7 +128,11 @@ class _AddStudentWState extends State<AddStudentW> {
                             Navigator.pop(context);
                           }
                         },
-                        child: Icon(Icons.person_add_alt_1_outlined)),
+                        child: const Icon(Icons.person_add_alt_1_outlined)),
+                       
+
+                       
+
                   ],
                 ),
               ),

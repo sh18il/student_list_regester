@@ -11,7 +11,7 @@ Future<void> addStudent(StudentModel value) async {
   await studentDB.add(value);
   studentListNotifier.value.add(value);
 
-  studentListNotifier.notifyListeners();
+  studentListNotifier.notifyListeners(); 
 }
 
 
